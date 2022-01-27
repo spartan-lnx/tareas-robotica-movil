@@ -33,7 +33,7 @@ class Brazo{
 let brazo;
 let sliderangle1;
 let sliderangle2;
-let a;
+
 function setup(){
     createCanvas(windowWidth,windowHeight);
     //rectMode(CENTER);
@@ -42,14 +42,13 @@ function setup(){
     sliderangle2 = createSlider(0,360,0,1);
     sliderangle1.position(80, 80);
     sliderangle2.position(80, 100);
-    a = 0;
-    brazo = new Brazo(x=windowWidth/2,y=windowHeight-80,l1=400,l2=300);
+
+    brazo = new Brazo(x=windowWidth/2,y=windowHeight-80,l1=200,l2=120);
 }
 
 function draw() {
     background(23,26,31);
     brazo.angulol1 = sliderangle1.value();
-    brazo.angulol2 = a;
-    a = (a+1)%360;
+    brazo.angulol2 = sliderangle2.value();
     brazo.dibujar();
 }
